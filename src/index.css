@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,26 +6,26 @@
 
 @layer base {
   :root {
-    --background: 220 40% 98%;
-    --foreground: 230 60% 15%;
+    --background: 224 100% 98%;
+    --foreground: 224 71% 9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 230 60% 15%;
+    --card-foreground: 224 71% 9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 230 60% 15%;
+    --popover-foreground: 224 71% 9%;
 
-    --primary: 238 76% 58%;
+    --primary: 237 88% 31%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 217 91% 60%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 200 100% 82%;
+    --secondary-foreground: 224 71% 9%;
 
-    --muted: 220 30% 92%;
-    --muted-foreground: 230 30% 40%;
+    --muted: 200 50% 95%;
+    --muted-foreground: 224 20% 45%;
 
-    --accent: 350 100% 88%;
-    --accent-foreground: 230 60% 15%;
+    --accent: 11 78% 88%;
+    --accent-foreground: 224 71% 9%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
@@ -93,7 +93,7 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Montserrat", sans-serif;
   }
 
   h1,
@@ -102,42 +102,65 @@
   h4,
   h5,
   h6 {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Cormorant Garamond", serif;
   }
 }
 
 @layer utilities {
-  .northern-lights {
+  .misty-forest {
     background: linear-gradient(
-      135deg,
-      rgba(79, 70, 229, 0.4) 0%,
-      rgba(59, 130, 246, 0.3) 25%,
-      rgba(147, 51, 234, 0.3) 50%,
-      rgba(59, 130, 246, 0.3) 75%,
-      rgba(79, 70, 229, 0.4) 100%
+      180deg,
+      rgba(8, 16, 49, 0.95) 0%,
+      rgba(18, 10, 143, 0.7) 50%,
+      rgba(8, 16, 49, 0.95) 100%
     );
-    background-size: 400% 400%;
-    animation: aurora 15s ease infinite;
   }
 
-  @keyframes aurora {
-    0% {
+  .rune-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 15 L30 45 M15 30 L45 30 M22 22 L38 38 M22 38 L38 22' stroke='%23120A8F' stroke-width='0.5' opacity='0.1' fill='none'/%3E%3C/svg%3E");
+  }
+
+  .polaroid-shadow {
+    box-shadow:
+      0 4px 6px -1px rgba(8, 16, 49, 0.1),
+      0 2px 4px -1px rgba(8, 16, 49, 0.06),
+      0 10px 20px rgba(8, 16, 49, 0.15);
+  }
+
+  .aurora-glow {
+    background: linear-gradient(
+      135deg,
+      rgba(18, 10, 143, 0.3) 0%,
+      rgba(175, 219, 245, 0.3) 50%,
+      rgba(243, 207, 198, 0.3) 100%
+    );
+    background-size: 400% 400%;
+    animation: aurora-shift 8s ease infinite;
+  }
+
+  @keyframes aurora-shift {
+    0%,
+    100% {
       background-position: 0% 50%;
     }
     50% {
       background-position: 100% 50%;
     }
-    100% {
-      background-position: 0% 50%;
-    }
   }
 
-  .forest-gradient {
+  .hover-scale {
+    transition: transform 0.3s ease;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  .lake-reflection {
     background: linear-gradient(
       to bottom,
-      rgba(30, 58, 138, 0.9) 0%,
-      rgba(79, 70, 229, 0.7) 50%,
-      rgba(30, 58, 138, 0.9) 100%
+      rgba(175, 219, 245, 0.2) 0%,
+      rgba(175, 219, 245, 0.4) 100%
     );
   }
 }
